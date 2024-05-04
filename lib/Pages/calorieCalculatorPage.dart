@@ -60,15 +60,22 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                 style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 25,
-                    color: Colors.white
+                    color: Colors.white,
                 ),
               ),
               // const SizedBox(height: 5,),
-              TextFormField(
-                controller:ageController,
-                style: const TextStyle(
-                    color:Colors.white,
-                    fontSize: 20
+              SizedBox(
+                width: 100,
+                height: 50,
+                child: TextFormField(
+                  controller:ageController,
+                  style: const TextStyle(
+                      color:Colors.white,
+                      fontSize: 20
+                  ),
+                  decoration:const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
 
@@ -83,11 +90,18 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
               ),
               ),
               // const SizedBox(height: 5,),
-              TextFormField(
-                controller: heightController,
-                style: const TextStyle(
-                    color:Colors.white,
-                    fontSize: 20
+              SizedBox(
+                width: 100,
+                height: 50,
+                child: TextFormField(
+                  controller: heightController,
+                  style: const TextStyle(
+                      color:Colors.white,
+                      fontSize: 20
+                  ),
+                  decoration:const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
 
@@ -101,18 +115,25 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                     color: Colors.white
                 ),
               ),
-              TextFormField(
-                controller: weightController,
-                style: const TextStyle(
-                    color:Colors.white,
-                    fontSize: 20
+              SizedBox(
+                width: 100,
+                height: 50,
+                child: TextFormField(
+                  controller: weightController,
+                  style: const TextStyle(
+                      color:Colors.white,
+                      fontSize: 20
+                  ),
+                  decoration:const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
 
 
               //This is for the activity input
               const SizedBox(height: 25,),
-              const Text("On the scale from 1 to 4... How active are you?",
+              const Text("On the scale from 1 to 4\nHow active are you?",
                 style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 20,
@@ -120,64 +141,79 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                 ),
               ),
               // const SizedBox(height: 5,),
-              TextFormField(
-                controller: activityController,
-                style: const TextStyle(
-                    color:Colors.white,
-                    fontSize: 20
+              SizedBox(
+                width: 100,
+                height: 50,
+                child: TextFormField(
+                  controller: activityController,
+                  style: const TextStyle(
+                      color:Colors.white,
+                      fontSize: 20
+                  ),
+                  decoration:const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
 
 
               //This is for the buttons for the calculations
               const SizedBox(height: 25,),
-              Row(
-                children: [
-                  ElevatedButton(onPressed: (){
-                    //TODO: this is where the code for the changes for the male side will happen
-                    age = ageController as int;
-                    bodyHeight = heightController as int;
-                    bodyWeight = weightController as int;
-                    isActive = activityController as int;
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(onPressed: (){
+                      //TODO: this is where the code for the changes for the male side will happen
+                      age = ageController as int;
+                      bodyHeight = heightController as int;
+                      bodyWeight = weightController as int;
+                      isActive = activityController as int;
 
-                    //checks age
-                    if(age < 0 && age > 100){
-                      print("Enter a valid age!");
-                    }
-                    else if(bodyHeight < 130){
-                      print("Enter a valid body height");
-                    }else if(bodyWeight < 20){
-                      print("Enter a valid body weight");
-                    }
+                      //checks age
+                      if(age < 0 && age > 100){
+                        print("Enter a valid age!");
+                      }
+                      else if(bodyHeight < 130){
+                        print("Enter a valid body height");
+                      }else if(bodyWeight < 20){
+                        print("Enter a valid body weight");
+                      }
 
-                    switch(isActive) {
-                      case 1:
-                        isActive = 1;
-                        break;
-                      case 2:
-                        isActive = 2;
-                        break;
-                      case 3:
-                        isActive = 3;
-                        break;
-                      case 4:
-                        isActive = 4;
-                        break;
-                      default:
-                        print("Enter a valid scaling");
-                    }
+                      switch(isActive) {
+                        case 1:
+                          isActive = 1;
+                          break;
+                        case 2:
+                          isActive = 2;
+                          break;
+                        case 3:
+                          isActive = 3;
+                          break;
+                        case 4:
+                          isActive = 4;
+                          break;
+                        default:
+                          print("Enter a valid scaling system");
+                      }
 
-                  },
-                  child: const Text("Calculate for male!",),
-                  ),
-                  const SizedBox(width: 10,),
-                  ElevatedButton(onPressed: (){
-                    //TODO: this is where the changes for the female side will happen
+                    },
+                    child: const Text("Calculate for male!",
+                    style: TextStyle(color: Colors.black),
+                    ),
+                    ),
+                    const SizedBox(width: 10,),
+                    ElevatedButton(onPressed: (){
+                      //TODO: this is where the changes for the female side will happen
 
-                  },
-                    child: const Text("Calculate for female!",),
-                  ),
-                ],
+                    },
+                      child: const Text("Calculate for female!",
+                      style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
               ),
 
 

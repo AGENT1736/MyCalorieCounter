@@ -17,6 +17,7 @@ class _TabBarPageState extends State<TabBarPage> {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
+          backgroundColor: Colors.black,
           // backgroundColor: Colors.blueGrey[900],
           appBar: AppBar(
             //Title settings
@@ -28,12 +29,17 @@ class _TabBarPageState extends State<TabBarPage> {
             ),
             ),
             centerTitle: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(25)
+              )
+            ),
             //Title Background Settings
             backgroundColor: Colors.amber[900],
             //Tab bar settings
             bottom:  TabBar(tabs: const[
-              Text("Cal Calculator"),
-              Text("BMI Calculator")
+              Text("CALORIES"),
+              Text("BODY MASS INDEX")
             ],
             labelColor: Colors.black,
             dividerColor: Colors.grey,
@@ -49,6 +55,7 @@ class _TabBarPageState extends State<TabBarPage> {
               BMICalculator()
             ],
           ),
+
         )
     );
   }
