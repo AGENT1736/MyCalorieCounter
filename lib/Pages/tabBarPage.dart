@@ -25,23 +25,27 @@ class _TabBarPageState extends State<TabBarPage> {
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
-              color: Colors.black
+              color: Colors.white
             ),
             ),
             centerTitle: true,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(25)
+                bottom: Radius.circular(0)
               )
             ),
             //Title Background Settings
-            backgroundColor: Colors.amber[900],
+            backgroundColor: const Color.fromRGBO(255, 122, 0, 1),
             //Tab bar settings
             bottom:  TabBar(tabs: const[
               Text("CALORIES"),
               Text("BODY MASS INDEX")
             ],
-            labelColor: Colors.black,
+            //this is the part that edits the underline of selected tab
+            indicator: const UnderlineTabIndicator(
+              borderSide: BorderSide(width: 1.0,color: Colors.white),
+            ),
+            labelColor: Colors.white,
             dividerColor: Colors.grey,
             unselectedLabelColor: Colors.deepOrange[900],
             ),

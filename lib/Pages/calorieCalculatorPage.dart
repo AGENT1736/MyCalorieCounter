@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CalorieCalculator extends StatefulWidget {
@@ -50,7 +49,7 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
           child: Column(
 
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
 
 
@@ -68,13 +67,18 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                 width: 100,
                 height: 50,
                 child: TextFormField(
-                  controller:ageController,
+                  controller: ageController,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                       color:Colors.white,
                       fontSize: 20
                   ),
-                  decoration:const InputDecoration(
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25)
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[900],
                   ),
                 ),
               ),
@@ -95,12 +99,17 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                 height: 50,
                 child: TextFormField(
                   controller: heightController,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                       color:Colors.white,
                       fontSize: 20
                   ),
-                  decoration:const InputDecoration(
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25)
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[900]
                   ),
                 ),
               ),
@@ -120,12 +129,17 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                 height: 50,
                 child: TextFormField(
                   controller: weightController,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                       color:Colors.white,
                       fontSize: 20
                   ),
-                  decoration:const InputDecoration(
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25)
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[900]
                   ),
                 ),
               ),
@@ -140,18 +154,23 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                     color: Colors.white
                 ),
               ),
-              // const SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               SizedBox(
                 width: 100,
                 height: 50,
                 child: TextFormField(
                   controller: activityController,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                       color:Colors.white,
                       fontSize: 20
                   ),
-                  decoration:const InputDecoration(
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25)
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[900]
                   ),
                 ),
               ),
@@ -164,6 +183,8 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
+                    // This is a button used to calculate the calories required for males
                     ElevatedButton(onPressed: (){
                       //TODO: this is where the code for the changes for the male side will happen
                       age = ageController as int;
@@ -204,6 +225,8 @@ class _CalorieCalculatorState extends State<CalorieCalculator> {
                     ),
                     ),
                     const SizedBox(width: 10,),
+
+                    //This is the button used to calculate calories required for females
                     ElevatedButton(onPressed: (){
                       //TODO: this is where the changes for the female side will happen
 

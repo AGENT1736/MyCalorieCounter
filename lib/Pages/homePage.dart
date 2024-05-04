@@ -67,8 +67,8 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.fastfood_rounded)
           )
         ],
-        backgroundColor: Colors.amber[900],
-        selectedItemColor: Colors.black,
+        backgroundColor: const Color.fromRGBO(255, 122, 0, 1),
+        selectedItemColor: Colors.white,
         unselectedItemColor: Colors.deepOrange[900],
       ),
     );
